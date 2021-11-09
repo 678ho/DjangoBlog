@@ -1,0 +1,38 @@
+폴더 PATH의 목록입니다.
+볼륨 일련 번호는 7EA9-C957입니다.
+
+├─blog
+│  │  asgi.py
+│  │  settings.py
+│  │  urls.py
+│  │  wsgi.py
+│  └─__init__.py
+└─main
+    │  admin.py
+    │  apps.py
+    │  forms.py
+    │  models.py
+    │  tests.py
+    │  views.py
+    │  __init__.py
+    │  
+    ├─migrations
+    │          
+    ├─static
+    │  ├─bootstrap
+    │  │  ├─css
+    │  │  │      
+    │  │  ├─fonts
+    │  │  │      
+    │  │  └─js
+    │  └─css
+    │          index.css
+    │          
+    ├─templates
+    │      create.html
+    │      detail.html
+    │      index.html
+    │      update.html
+    │      
+    └─__pycache__
+            

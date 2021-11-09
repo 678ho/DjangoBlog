@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="{% url 'index' %}">Blog</a></h1>
+        <style type="text/css">
+            a:link { color: red; text-decoration: none;}
+            a:visited { color: black; text-decoration: none;}
+            a:hover { color: blue; text-decoration: underline;}
+        </style>
+
+    </div>
+    <div class="recent">Recent Posts</div>
+        <div class="container">
+            <ul class="list">
+                {% for write in all_write %}
+                <li class="item">
+                    <h3><a href="{% url 'detail' write.id %}"/>{{ wrtie.title }}</h3>
+                    <div class="content">{{ write.title|truncatewords:50 }}</div>
+                    <div class="info">
+                        <div class="published-date"><span>Date | </span>{{ write.updated_at }}</div>
+                    </div>
+                    <div class="update-delete">
+                        <a href="{% url 'update' write.id %}">수정하기</a>
+                        <a href="{% url 'delete' write.id %}">삭제하기</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        <div class="create">
+            <button type="button" class="create-btn"><a href="{% url 'create' %}">글 작성📝</a></button> 
+    </div>
+
+ <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+    <script src="{% static 'bootstrap/js/bootstrap.min.js'%}"></script>
+</body>
+</html>
